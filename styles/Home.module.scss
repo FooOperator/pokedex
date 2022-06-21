@@ -1,0 +1,80 @@
+@import 'colors.module.scss';
+
+.grid {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    border: .2rem solid $default;
+
+    * {
+      background-color: white;
+    }
+
+    >* {
+      flex: 1;
+      border-color: $default;
+      color: $default;
+    }
+
+    &:hover {
+
+      &,
+      * {
+        color: $highlight;
+        border-color: $highlight;
+      }
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        margin: 2rem;
+        max-height: 200px;
+      }
+
+      span {
+        width: 100%;
+        font-size: 2rem;
+        text-align: center;
+        line-height: 4rem;
+        border-top: .2rem solid $default;
+      }
+    }
+  }
+}
+
+
+
+.container {
+  display: flex;
+  margin: 1rem 0;
+  flex-direction: column;
+
+  .none-found {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+  }
+
+  .search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .search-bar {
+      width: 35%;
+      margin: auto;
+      padding: 0.3rem;
+    }
+
+  }
+}

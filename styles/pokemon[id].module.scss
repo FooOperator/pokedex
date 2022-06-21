@@ -1,0 +1,73 @@
+@import 'colors.module.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.back-button {
+  background-color: none;
+  border: .1rem solid $default;
+  cursor: pointer;
+  padding: .1rem 2rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  font-size: 2rem;
+}
+
+.content {
+  flex: 1;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+  background-color: #D6DBD2;
+  padding: 1rem;
+  width: 100%;
+  max-width: 840px;
+  max-height: 720px;
+  min-width: 560px;
+  min-height: 480px;
+
+  .pokemon-image {
+    max-width: 450px;
+    max-height: 450px;
+    border: .4rem $default solid;
+    margin-left: 1rem;
+  }
+
+  .description-column {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    flex-basis: 100%;
+    margin-bottom: auto;
+    margin-left: .2rem;
+
+    h1 {
+      margin: 0;
+
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    table {
+      margin-top: 4rem;
+
+      .stat-row {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: .1rem solid black;
+
+        .name-data {
+          font-weight: bold;
+        }
+
+        .value-data {}
+      }
+    }
+  }
+}

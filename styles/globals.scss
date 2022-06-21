@@ -1,3 +1,5 @@
+@import 'colors.module.scss';
+
 html,
 body {
   padding: 0;
@@ -13,4 +15,11 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+body {
+  background-color: $background;
+  color: $default;
+  
 }
