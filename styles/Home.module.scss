@@ -37,7 +37,10 @@
 
       img {
         margin: 2rem;
-        max-height: 200px;
+        max-height: 240px;
+        max-width: 240px;
+        height: 240px;
+        width: 240px;
       }
 
       span {
@@ -73,7 +76,14 @@
     .search-bar {
       width: 35%;
       margin: auto;
+      font-size: 1.8rem;
       padding: 0.3rem;
+      background-color: $background;
+      outline: none;
+      border: none;
+      border-bottom: .1rem solid $default;
+
+     
     }
 
   }

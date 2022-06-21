@@ -21,5 +21,31 @@ a {
 body {
   background-color: $background;
   color: $default;
-  
+
+}
+
+button,
+input {
+  border: none;
+  color: $default;
+  border-color: $default;
+  background-color: $background;
+
+  &:focus,
+  &:active {
+    border-color: $highlight;
+  }
+
+  &:hover:not(:focus) {
+    color: $light-highlight;
+    border-color: $light-highlight;
+  }
+}
+
+button {
+  cursor: pointer;
+
+  &:active {
+    color: $highlight;
+  }
 }

@@ -6,7 +6,6 @@
 }
 
 .back-button {
-  background-color: none;
   border: .1rem solid $default;
   cursor: pointer;
   padding: .1rem 2rem;
@@ -45,28 +44,31 @@
     margin-bottom: auto;
     margin-left: .2rem;
 
-    h1 {
-      margin: 0;
-
-    }
-
+    h1,
     h2 {
       margin: 0;
+
     }
 
     table {
       margin-top: 4rem;
 
+      td {
+        font-size: 1.3rem;
+      }
+
       .stat-row {
         display: flex;
         justify-content: space-between;
-        border-bottom: .1rem solid black;
+        border-bottom: .1rem solid $default;
 
         .name-data {
           font-weight: bold;
         }
 
-        .value-data {}
+        .value-data {
+          color: $default;
+        }
       }
     }
   }
