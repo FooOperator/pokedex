@@ -1,39 +1,48 @@
 @import 'colors.module.scss';
+@import 'media_query.module.scss';
 
 .container {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  flex: 1;
 }
 
-.back-button {
-  border: .1rem solid $default;
-  cursor: pointer;
-  padding: .1rem 2rem;
-  margin-top: 1rem;
-  margin-left: 2rem;
-  font-size: 2rem;
+.button-container {
+  margin: 1rem 0;
+
+  .back-button {
+    cursor: pointer;
+    border: .1rem solid $default;
+    padding: .1rem 2rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    font-size: 2rem;
+  }
+
 }
 
 .content {
-  flex: 1;
-  align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10rem;
   background-color: #D6DBD2;
   padding: 1rem;
-  width: 100%;
-  max-width: 840px;
-  max-height: 720px;
-  min-width: 560px;
-  min-height: 480px;
+  margin: auto;
+  width: 60%;
+  min-width: 650px;
+  max-width: 850px;
 
   .pokemon-image {
     max-width: 450px;
     max-height: 450px;
     border: .4rem $default solid;
     margin-left: 1rem;
+
+    @media (min-width: $breakpoint-mobile) {
+      max-width: 350px;
+      max-height: 350px;
+    }
   }
 
   .description-column {
