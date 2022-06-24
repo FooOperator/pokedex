@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from '../../styles/pokemon[id].module.scss';
-import { Pokemon } from "../../types/pokemon";
+import { Pokemon } from "../../types/types";
 
 export default function Details() {
     const {
@@ -35,7 +35,7 @@ export default function Details() {
             <Head>
                 <title>{currentPokemon?.name ?? 'Loading...'}</title>
             </Head>
-            <div>
+            <div className={styles['button-container']}>
                 <Link href={'/'}>
                     <a>
                         <button className={styles['back-button']}>

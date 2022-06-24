@@ -16,3 +16,8 @@ export type Pokemon = {
     ];
     type: PokemonType[];
 }
+
+export type SearchParams = {
+    name: string;
+    type: [type: PokemonType, checked: boolean][];
+}

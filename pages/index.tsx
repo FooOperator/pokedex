@@ -4,15 +4,9 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.scss'
-import { PokemonType, Pokemon, POKEMON_TYPES } from '../types/pokemon'
-
-type SearchParams = {
-  name: string;
-  type: [type: PokemonType, checked: boolean][];
-}
+import { PokemonType, Pokemon, POKEMON_TYPES } from '../types/types'
 
 const Home = () => {
-  const [collapsed, setCollapsed] = useState(false);
   const [pokemon, setPokemon] = useState<Pokemon[]>([]);
   const [filteredPokemon, setFilteredPokemon] = useState<Pokemon[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -33,17 +27,15 @@ const Home = () => {
     setFilteredPokemon(
       pokemon.filter(pokemon => {
         const { name } = pokemon;
-        return name.toLowerCase().includes(searchTerm.toLowerCase())
-      }));
-
+        return name.toLowerCase().includes(searchTerm.toLowerCase());
+      })
+    );
   }, [searchTerm, pokemon]);
 
   const handleSearchTermChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, name } = e.target;
+    const { value } = e.target;
     setSearchTerm(value);
   }
-
-  const handleCollapsedToggle = () => setCollapsed(!collapsed);
 
   return (
     <div className={styles['container']}>
@@ -60,7 +52,7 @@ const Home = () => {
         />
       </div>
       {
-        filteredPokemon.length > 1 ?
+        filteredPokemon.length > 0 ?
           <div className={styles['grid']}>
             {
               filteredPokemon.map(item =>
@@ -69,8 +61,6 @@ const Home = () => {
                     <a>
                       <img
                         src={`https://jherr-pokemon.s3.us-west-1.amazonaws.com/${item.image}`}
-                        width={150}
-                        height={150}
                         alt={item.name}
                       />
                       <span>{item.name}</span>
